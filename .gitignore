@@ -1,0 +1,11 @@
+
+# External data, indexes and pretrained models
+/data/indexes/radlex.index
+/data/indexes/snomed.index
+/data/knowledge/terminology/snomed.json
+/data/raw/radlex.owl
+/data/raw/snomed_parsed.json
+/data/raw/SnomedCT_*.zip
+/hf/Doorad/CheXpert-plus-RRG/findings_section/*.parquet
+/hf/Doorad/CheXpert-plus-RRG/impression_section/*.parquet
+/models/pritamdeka/S-PubMedBert-MS-MARCO/pytorch_model.bin

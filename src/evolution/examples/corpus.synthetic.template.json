@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "sources": [
+    "radlex",
+    "snomed",
+    "guideline",
+    "pubmed",
+    "literature",
+    "case"
+  ],
+  "records": [],
+  "excluded_patient_ids": [
+    "SYNTHETIC_PATIENT_2"
+  ],
+  "provenance": {
+    "synthetic_only": true,
+    "note": "EMPTY SOFTWARE TEMPLATE; replace with lawful materialized documents and source versions before research."
+  }
+}

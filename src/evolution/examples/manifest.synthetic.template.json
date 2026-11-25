@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "allocation_seed": 20260615,
+  "cases": [
+    {
+      "case_id": "SYNTHETIC_CASE_0",
+      "patient_id": "SYNTHETIC_PATIENT_0",
+      "dataset": "SYNTHETIC_ONLY",
+      "partition": "train",
+      "allocation": "evolution",
+      "image_path": "/REPLACE_WITH_AUTHORIZED_IMAGE/SYNTHETIC_0.png",
+      "clinical_context": {
+        "modality": "CXR",
+        "view": "frontal"
+      },
+      "reference_facts": [
+        {
+          "fact_id": "R1",
+          "text": "SYNTHETIC PLACEHOLDER: replace with independently fixed clinical fact.",
+          "type": "positive finding"
+        },
+        {
+          "fact_id": "R2",
+          "text": "SYNTHETIC PLACEHOLDER: replace with another independent fixed fact.",
+          "type": "negative finding"
+        }
+      ]
+    },
+    {
+      "case_id": "SYNTHETIC_CASE_1",
+      "patient_id": "SYNTHETIC_PATIENT_1",
+      "dataset": "SYNTHETIC_ONLY",
+      "partition": "train",
+      "allocation": "development",
+      "image_path": "/REPLACE_WITH_AUTHORIZED_IMAGE/SYNTHETIC_1.png",
+      "clinical_context": {
+        "modality": "CXR",
+        "view": "frontal"
+      },
+      "reference_facts": [
+        {
+          "fact_id": "R1",
+          "text": "SYNTHETIC PLACEHOLDER: replace with independently fixed clinical fact.",
+          "type": "positive finding"
+        },
+        {
+          "fact_id": "R2",
+          "text": "SYNTHETIC PLACEHOLDER: replace with another independent fixed fact.",
+          "type": "negative finding"
+        }
+      ]
+    },
+    {
+      "case_id": "SYNTHETIC_CASE_2",
+      "patient_id": "SYNTHETIC_PATIENT_2",
+      "dataset": "SYNTHETIC_ONLY",
+      "partition": "test",
+      "allocation": "final",
+      "image_path": "/REPLACE_WITH_AUTHORIZED_IMAGE/SYNTHETIC_2.png",
+      "clinical_context": {
+        "modality": "CXR",
+        "view": "frontal"
+      },
+      "reference_facts": [
+        {
+          "fact_id": "R1",
+          "text": "SYNTHETIC PLACEHOLDER: replace with independently fixed clinical fact.",
+          "type": "positive finding"
+        },
+        {
+          "fact_id": "R2",
+          "text": "SYNTHETIC PLACEHOLDER: replace with another independent fixed fact.",
+          "type": "negative finding"
+        }
+      ]
+    }
+  ]
+}

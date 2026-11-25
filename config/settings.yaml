@@ -1,0 +1,135 @@
+model:
+  path: "qwen3.6-flash" 
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  api_key: ""
+  max_tokens: 8192
+  temperature: 0.7
+  top_p: 0.95
+  top_k: 20
+  presence_penalty: 1.5
+  enable_thinking: true
+  max_retries: 5
+  retry_base_delay_ms: 500
+
+# download data from huggingface base on the regitory name
+data:
+  chexpert_path: "./hf/Doorad/CheXpert-plus-RRG"
+  iu_xray_path: "./hf/X-iZhang/IU-Xray-RRG"                           
+  mimic_cxr_path: "./hf/Yamini-1628/MIMIC-CXR-RRG"                    
+  openi_path: "./hf/ykumards/open-i"
+  ct_rate_path: "./hf/ibrahimhamamci/CT-RATE"
+  radgenome_path: "./hf/RadGenome/RadGenome-ChestCT"
+  merlin_path: "./hf/merlin"
+  abdomenatlas_path: "./hf/AbdomenAtlas/AbdomenAtlas3.0Mini"
+  mr_rate_path: "./hf/Forithmus/MR-RATE"
+  radgenome_brain_mri_path: "./hf/JiayuLei/RadGenome-Brain_MRI"
+  default_split: "findings_section"
+  knowledge_dir: "./data/knowledge"
+  indexes_dir: "./data/indexes"
+  raw_dir: "./data/raw"
+  output_dir: "./output"
+
+embedding:
+  model_name: "./models/pritamdeka/S-PubMedBert-MS-MARCO"
+  device: "cuda:1"
+  batch_size: 64
+
+pubmed:
+  api_key: ""
+  max_results_per_query: 5
+  enabled: true
+
+snomed:
+  mode: "local"
+  snowstorm_url: "https://tx.fhir.org/r4"
+  edition: "900000000000207008"
+
+pipeline:
+  max_iterations: 3
+
+agents:
+  visual_analysis:
+    max_turns: 50
+    temperature: 0.7
+    max_tokens: 8192
+  evidence_retrieval:
+    max_turns: 20
+    temperature: 0.7
+    max_tokens: 8192
+  report_writing:
+    max_turns: 20
+    temperature: 0.7
+    max_tokens: 8192
+  quality_review:
+    max_turns: 15
+    temperature: 0.7
+    max_tokens: 8192
+
+hooks:
+  min_findings: 2
+  min_evidence_per_finding: 1
+  min_impressions: 1
+  require_anatomy_coverage: true
+
+limits:
+  compact_threshold_tokens: 20000
+  max_image_views: 32
+
+server:
+  host: "0.0.0.0"
+  port: 8080
+  cors_origins: "*"
+
+remote_kb:
+  base_url: "http://localhost:8081"
+  timeout: 60.0
+
+# Evidence-grounded counterfactual harness evolution and Claim-guided skill evolution.
+# Empty paths select the initial harness and empty skill library (no online learning).
+evolution:
+  harness_path: ""
+  skill_library_path: ""
+  frozen_manifest_path: ""
+  max_rounds: 5
+  max_candidates_per_defect: 4
+  max_candidate_evaluations: 20
+  local_repetitions: 5
+  validation_repetitions: 3
+  max_skills_per_intervention: 2
+  loss_weights: [0.50, 0.25, 0.25]
+  bootstrap_samples: 20000
+  bootstrap_seed: 20260615
+  confidence_level: 0.95
+  min_loss_gain: 0.01
+  retention_tolerance: 0.01
+  coverage_tolerance: 0.01
+  max_cost_ratio: 1.25
+  proposer:
+    model: "qwen3.6-flash"
+    temperature: 0.7
+    top_p: 0.95
+    max_tokens: 8192
+  skill_generator:
+    model: "qwen3.6-flash"
+    temperature: 0.2
+    top_p: 0.95
+    max_tokens: 8192
+  evaluator:
+    model: "qwen3.6-max-preview"
+    temperature: 0.0
+    top_p: 1.0
+    max_tokens: 8192
+
+retrieval:
+  snapshot_path: ""
+  snapshot_version: ""
+  require_snapshot: false  # Offline evolution must set true and supply a frozen corpus.
+
+provenance:
+  database: "./output/records.sqlite"
+
+# Supply the archived tariff used by an experiment. Unknown prices remain null;
+# incomplete accounting cannot satisfy the offline cost acceptance constraint.
+accounting:
+  input_cny_per_million: null
+  output_cny_per_million: null

@@ -1,0 +1,24 @@
+[
+  {
+    "defect_id": "SYNTHETIC_DEFECT",
+    "case_id": "SYNTHETIC_CASE_0",
+    "review_finding": {
+      "issue_type": "attribute_error",
+      "description": "SYNTHETIC PLACEHOLDER: use the observed review finding."
+    },
+    "dependencies": {
+      "nodes": {},
+      "edges": []
+    },
+    "remediation_trace": [],
+    "assessment_criteria": "SYNTHETIC PLACEHOLDER: define defect resolution before replay; retain all required facts.",
+    "required_fact_ids": {
+      "SYNTHETIC_CASE_0": [
+        "R1"
+      ],
+      "SYNTHETIC_CASE_1": [
+        "R1"
+      ]
+    }
+  }
+]

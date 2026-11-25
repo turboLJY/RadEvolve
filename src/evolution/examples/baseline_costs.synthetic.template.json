@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "patient_manifest_hash": "REPLACE_WITH_HASH_OF_ACTUAL_PATIENT_MANIFEST",
+  "versions": {
+    "model": "REPLACE_WITH_ACTUAL_MODEL_CONFIG_HASH",
+    "retrieval_snapshot": "REPLACE_WITH_CORPUS_HASH",
+    "harness": "REPLACE_WITH_H0_HASH",
+    "skills": "REPLACE_WITH_EMPTY_LIBRARY_HASH",
+    "resource_limits": "REPLACE_WITH_RESOURCE_HASH"
+  },
+  "repetitions": 3,
+  "runs": [
+    {
+      "case_id": "SYNTHETIC_CASE_1",
+      "patient_id": "SYNTHETIC_PATIENT_1",
+      "repetition": 0,
+      "complete": false,
+      "cost_cny": null
+    },
+    {
+      "case_id": "SYNTHETIC_CASE_1",
+      "patient_id": "SYNTHETIC_PATIENT_1",
+      "repetition": 1,
+      "complete": false,
+      "cost_cny": null
+    },
+    {
+      "case_id": "SYNTHETIC_CASE_1",
+      "patient_id": "SYNTHETIC_PATIENT_1",
+      "repetition": 2,
+      "complete": false,
+      "cost_cny": null
+    }
+  ]
+}
